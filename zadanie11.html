@@ -1,0 +1,30 @@
+<!-- Организовать беспрерывный  ввод чисел с клавиатуры, пока пользователь не
+введёт 0. После ввода нуля, показать на экран количество чисел, которые были
+введены, их общую сумму и среднее арифметическое. Подсказка: необходимо
+объявить переменную-счетчик, которая будет считать количество введенных чисел,
+и переменную, которая будет накапливать общую сумму чисел. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+let a;
+let i = 0;
+let sum = 0;
+do {
+  a = +prompt('Введите число');
+  sum += a;
+  i++;
+} while (a !== 0) 
+
+alert(i);
+alert(sum);
+alert(sum / i);
+        </script>
+</body>
+</html>

@@ -6,7 +6,7 @@ const nextDate = new Date(
   currentDate.getHours(),
   currentDate.getMinutes(),
   currentDate.getSeconds(),
-  currentDate.getUTCMilliseconds()
+  currentDate.getMilliseconds()
 );
 console.log(currentDate);
 console.log(nextDate);

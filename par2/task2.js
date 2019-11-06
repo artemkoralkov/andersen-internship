@@ -5,4 +5,5 @@ for (let i = 1; i <= 100; i++) {
   }
 }
 arr.reverse();
+console.log(arr.length);
 console.log(arr);

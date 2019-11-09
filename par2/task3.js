@@ -1,3 +1,5 @@
+/* Создать функцию вычисляющую путь по формуле S = v * t.
+*/
 function calcPath(v, t) {
   return v * t;
 }

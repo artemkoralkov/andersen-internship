@@ -12,11 +12,11 @@ Array.prototype.myReducer = function(callback, result) {
   }
   return result;
 };
-const euros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const doubled = euros.myReducer((total, amount) => {
-  if (amount % 5 === 0) {
-    total.push(amount);
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const newArray = array.myReducer((total, item) => {
+  if (item % 5 === 0) {
+    total.push(item);
   }
   return total;
 }, []);
-console.log(doubled);
+console.log(newArray);

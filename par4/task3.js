@@ -4,13 +4,14 @@
 первый раз и т.д */
 function sum(x) {
   let tmp = x;
-  return (function() {
+  sum = function() {
     let arg;
     if (arguments[0]) arg = arguments[0];
     else arg = 0;
     tmp += arg;
     return tmp;
-  })();
+  }
+  return sum();
 }
 console.log(sum(3));
 console.log(sum(5));

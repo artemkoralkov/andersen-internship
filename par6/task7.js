@@ -5,8 +5,8 @@
  */
 
 function partialAny(fun, ...args) {
-  args = args.filter(val => val !== undefined);
   return function(...rest) {
+    args = args.map(val => (val === undefined ? rest.shift() : val));
     return fun(...args, ...rest);
   };
 }

@@ -28,11 +28,7 @@ function range(a, b, n = 1) {
   return arr;
 }
 function sum(arr) {
-  let sum = 0;
-  arr.forEach(element => {
-    sum += element;
-  });
-  return sum;
+  return args.reduce((s, v) => s + v);
 }
 
 console.log(sum(range(1, 10)));

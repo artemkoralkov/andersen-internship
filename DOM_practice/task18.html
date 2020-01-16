@@ -1,0 +1,46 @@
+<!-- Создайте таблицу из 2 строк и двух столбцов. В первую ячейку поместите картинку.
+Реализуйте возможность перетаскивания изображения между ячейками. -->
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      table {
+        height: 250px;
+        width: 250px;
+        border-collapse: collapse;
+        table-layout: fixed;
+        text-align:center;
+      }
+    </style>
+    <script>
+      function allowDrop(ev) {
+        ev.preventDefault();
+      }
+      function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+      }
+      function drop(ev) {
+        ev.preventDefault();
+        let data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+      }
+    </script>
+  </head>
+  <body>
+    <table  border="1" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <tr>
+        <td> 
+          <img id="drag1" src="./images/event_AerialBombardment.png" draggable="true" ondragstart="drag(event)"  width="50" height="50" >
+        </td>
+        <td>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td>
+        </td>
+      </tr>
+    </table>  
+  </body>
+</html>

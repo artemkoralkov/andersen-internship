@@ -1,0 +1,22 @@
+<!-- По нажатию на кнопку, заголовок <h1> трансформируется в <h3>. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8 />
+    <script>
+      function js_style() {
+        document.querySelector('h1').outerHTML = '<h3> Заголовок 1</h3>';
+      }
+    </script>
+    <title>JS работа с DOM упражнение 1</title>
+</head>
+  <body>
+    <h1> Заголовок 1</h1>
+    <h2> Заголовок 2</h2>
+    <h3> Заголовок 3</h3>
+    <div>
+      <button id="jsstyle" onclick="js_style()">Change</button>
+    </div>
+  </body>
+</html>

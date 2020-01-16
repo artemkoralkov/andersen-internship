@@ -1,0 +1,21 @@
+<!-- Создайте абзац текста с несколькими атрибутами и кнопку.
+По нажатию на кнопку Текст абзаца заменяется на его атрибуты. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8 />
+    <script>
+      function js_style() {
+      document.querySelector('p').textContent = `${document.querySelector('p').className} ${document.querySelector('p').id}`
+      }
+    </script>
+    <title>JS работа с DOM упражнение 13</title>
+  </head>
+  <body>
+    <p class='p' id='123'>Абзац текста.</p>
+    <div>
+      <button id="jsstyle" onclick="js_style()">Style</button>
+    </div>
+  </body>
+</html>

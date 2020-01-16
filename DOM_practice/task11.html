@@ -1,0 +1,26 @@
+<!-- Создайте на странице кнопку,
+на которой отображается количество нажатий на нее. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8 />
+    <script>
+      function js_style() {
+        let num = 1;
+        js_style = function() {
+          let elem = document.getElementById('jsstyle');
+          elem.textContent = `Counts:${num}`;
+          num++;
+        };
+        return js_style();
+        }
+    </script>
+    <title>JS работа с DOM упражнение 1</title>
+  </head>
+  <body>
+    <div>
+      <button id="jsstyle" onclick="js_style()">Counts:0</button>
+    </div>
+  </body>
+</html>

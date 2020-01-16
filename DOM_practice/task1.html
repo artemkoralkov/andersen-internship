@@ -1,0 +1,23 @@
+<!-- Модифицируйте html-документ так, чтобы при нажатии кнопки размер текста
+увеличивался на 5 пунктов, а начертание становилось полужирным. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8 />
+      <script>
+        function js_style() {
+          let elem = document.getElementById('text');
+          elem.style.fontSize = parseInt(getComputedStyle(elem, '').fontSize) + 5 + 'px'
+          elem.style.fontWeight = 700;
+        }
+      </script>
+    <title>JS работа с DOM упражнение 1</title>
+  </head>
+  <body>
+    <p id='text'>Измени меня</p>
+    <div>
+      <button id="jsstyle" onclick="js_style()">Style</button>
+    </div>
+  </body>
+</html>

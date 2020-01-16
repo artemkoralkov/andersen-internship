@@ -1,0 +1,22 @@
+<!-- Создайте форму с input, при вводе данных, под Input они повторяются
+(без кнопки, событие на изменение содержимого). -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function repeatInput(value) {
+        let p = document.createElement('p');
+        p.textContent = value;
+        document.body.append(p);
+        }
+    </script>
+    <meta charset=u tf-8 />
+    <title>JS работа с DOM упражнение 14</title>
+  </head>
+  <body>
+    <form id="form1">
+      Input: <input type="text" name="input" onchange="repeatInput(this.value)"> <br>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!-- Напишите функцию JavaScript, при каждом новом нажатии кнопки,
+ изменяющую цвет фона абзаца на другой. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8 />
+    <title>JS работа с DOM упражнение 3</title>
+    <script>
+      function setBackgroundColor() {
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+        let c = `#${r.toString(16)}${g.toString(16)}${b.toString(16)}`;
+        let elem = document.querySelector('p');
+        elem.style.backgroundColor = c;
+        }
+    </script>
+  </head>
+  <body>
+    <input type="button" value="Click to set paragraph background color" onclick="setBackgroundColor()">
+    <p>Меняем цвет абзаца</p>
+    </FORM>
+  </body>
+</html>

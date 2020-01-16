@@ -1,0 +1,26 @@
+<!-- Поместите на страницу картинку,
+по нажатию на нее картинка меняется на другую. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8 />
+    <script>
+        function changeImage() {
+          let img = document.querySelector('img');
+          let imgSrc = img.src.split('/');
+          if ( imgSrc[imgSrc.length - 1] === 'event_AerialBombardment.png' ) {
+            img.src = './images/event_AntwerpCaptured.png';
+          } else {
+              img.src = './images/event_AerialBombardment.png';
+          }  
+        }
+    </script>
+    <title>JS работа с DOM упражнение 1</title>
+  </head>
+  <body>
+    <div>
+      <img src="./images/event_AerialBombardment.png" alt="Альтернативный текст" onclick='changeImage()'>
+    </div>
+  </body>
+</html>

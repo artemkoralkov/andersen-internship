@@ -1,0 +1,25 @@
+<!-- В следующем HTML-коде замените содержимоеэлементов с классом zzz
+на их порядковый номер в коде. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8 />
+    <script>
+      function js_style() {
+        let elem = document.querySelectorAll('.zzz');
+        elem = Array.from(elem).map((val, indx) => val.textContent = indx + 1);
+        }
+    </script>
+    <title>JS работа с DOM упражнение 15</title>
+  </head>
+  <body>
+    <h2 class="zzz">Заголовок с классом zzz.</h2>
+    <p class="zzz">Абзац с классом zzz.</p>
+    <p class="zzz">Абзац с классом zzz.</p>
+    <p>Просто абзац, не поменяется.</p>
+    <div>
+      <button id="jsstyle" onclick="js_style()">Style</button>
+    </div>
+  </body>
+</html>

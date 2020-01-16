@@ -1,0 +1,79 @@
+<!-- Создайте поле из белых клеток (размер примерно 30×30 пикселей).
+При клике на клеточку она должна менять цвет на черный. Под таблицей
+должны быть кнопки:
+«поменять цвета» (при нажатии все цвета клеток меняются на противоположные)
+«сброс» (при нажатии все клетки становятся белыми).
+Примечание:
+1.	Поле можно создать с помощью таблицы <table>. Таблицу следует сгенерировать
+и добавить в DOM страницы используя JS.
+2.	Обработчик события должен быть один на всю таблицу, а не отдельный
+на каждую клетку.
+3.	Для изменения цвета всех клеток сразу, пометить их отдельным классом,
+а затем поменять класс на таблице.
+4.	Предпочтительно использовать событие mousedown, срабатывающее при
+нажатии кнопки.
+5.	Средствами CSS3 сделать таблицу невыделяемой. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8 />
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      
+      .white {
+        background-color: white;
+      }
+        
+      .black {
+        background-color: black;
+      }
+        
+      td {
+        width: 30px;
+        height: 30px;
+      }
+    </style>
+    <script>
+      window.onload = function createTable() {
+        const table = document.createElement('table');
+        for (let i = 0; i < 10; i++) {
+          table.append(document.createElement('TR'));
+          for (let j = 0; j < 10; j++) {
+            table.rows[i].append(document.createElement('TD'));
+            table.rows[i].cells[j].className = 'white';
+          }
+        }
+        table.border = '1';
+        table.onselectstart = function() {
+          return false;
+        };
+        table.onmousedown = function() {
+        event.target.className = 'black';
+      };
+      document.body.prepend(table);
+      };
+    function changeColor() {
+      Array.from(document.querySelector('table').childNodes).map(val =>
+      Array.from(val.childNodes).map(val => {
+      if (val.className === 'white') {
+        val.className = 'black';
+      } else val.className = 'white';
+      })
+    );
+    }
+    function makeColorWhite() {
+      Array.from(document.getElementsByClassName('black')).map(val => (val.className = 'white'));
+    }
+    </script>
+    <title>JS работа с DOM упражнение 17</title>
+  </head>
+  <body>
+    <div>
+      <button onclick="changeColor()">Поменять цвета</button>
+      <button onclick="makeColorWhite()">Сброс</button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!-- Создайте форму с input и кнопкой. По нажатию на кнопку стиль содержимого
+input изменяется, например меняется цвет. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function changeStyle() {
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+        let c = `#${r.toString(16)}${g.toString(16)}${b.toString(16)}`;
+        document.forms.form1.input.style.color = c;
+        }
+    </script>
+    <meta charset=utf-8 />
+    <title>JS работа с DOM упражнение 8</title>
+</head>
+  <body>
+    <form id="form1">
+      Input: <input type="text" name="input"> <br>
+    </form>
+    <input type="button" onclick="changeStyle()" value="Change Style">
+  </body>
+</html>

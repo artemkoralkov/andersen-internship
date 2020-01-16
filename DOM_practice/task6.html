@@ -1,0 +1,33 @@
+<!-- Напишите функцию JavaScript, удаляющую указанный элемент
+из выпадающего списка формы. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function deleteDataFromForm() {
+        let list = document.forms.form1.querySelector('select');
+        let data = prompt('Данные');
+        list = Array.from(list).map(val => val.value === data ? val.remove() : val)
+        }
+    </script>
+    <meta charset=utf-8 />
+    <title>JS работа с DOM упражнение 2</title>
+  </head>
+  <body>
+    <form action="formdata" method="post" name="form1">
+      <p>
+        <select name="list1">
+          <option>Выберите из списка</option>
+          <option>Option</option>
+          <option>Textarea</option>
+          <option>Label</option>
+          <option>Fieldset</option>
+          <option>Legend</option>
+        </select>
+      </p>
+    </form>
+    <input type="button" onclick="deleteDataFromForm()" value="Удалить из списка">
+  </body>
+
+</html>

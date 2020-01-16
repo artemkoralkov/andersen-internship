@@ -1,0 +1,37 @@
+<!-- Напишите функцию JavaScript, добавляющую строки в таблицу. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      let index = 3;
+      function insertRow() {
+        let elem = document.getElementById('sampleTable').querySelector('tbody');
+        let row = document.createElement("TR");
+        elem.append(row);
+        let td1 = document.createElement("TD");
+        let td2 = document.createElement("TD");
+        row.append(td1);
+        row.append(td2);
+        td1.innerHTML = `Столбец ${index} Ячейка 1`;
+        td2.innerHTML = `Столбец ${index} Ячейка 2`;
+        index++;
+        }
+    </script>
+    <meta charset=utf-8 />
+    <title>JS работа с DOM упражнение 4</title>
+  </head>
+  <body>
+    <table id="sampleTable" border="1">
+      <tr>
+        <td>Столбец 1 Ячейка 1</td>
+        <td>Столбец 1 Ячейка 2</td>
+      </tr>
+      <tr>
+        <td>Столбец 2 Ячейка 1</td>
+        <td>Столбец 2 Ячейка 2</td>
+      </tr>
+    </table><br>
+    <input type="button" onclick="insertRow()" value="Добавили строку">
+</body>
+</html>
